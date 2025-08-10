@@ -6,7 +6,7 @@ import Scene from "./components/Scene"
 
 const page = () => {
   return (<>
-    {/* <Scene  /> */}
+    {/* <Scene  /> */} // disabled it during development because re-rendering the 3D scene is a waste of resources 🤠
     <main className="relative border-x-1 border-muted h-screen">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background pointer-events-none" />
       <Gradient_background />

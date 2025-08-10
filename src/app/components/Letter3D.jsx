@@ -21,7 +21,7 @@ const deviceSwitch = (width) => {
   return [4, 2, 0];
 };
 
-export default function Wletter() {
+export default function letter3D({text}) {
   const letterRef = useRef();
   const { camera , gl  } = useThree();
   const [position, setPosition] = useState(deviceSwitch(typeof window !== "undefined" ? window.innerWidth : 1024));
@@ -57,7 +57,7 @@ export default function Wletter() {
   return (
     <mesh position={position} ref={letterRef}>
       <MeshTransmissionMaterial {...materialSettings} />
-      <textGeometry args={["W", { font, depth: 0.5, size: 2, height: 1 }]} />
+      <textGeometry args={[text, { font, depth: 0.5, size: 2, height: 1 }]} />
     </mesh>
   );
 }
