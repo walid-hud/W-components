@@ -21,7 +21,7 @@ const deviceSwitch = (width) => {
   return [4, 2, 0];
 };
 
-export default function letter3D({text}) {
+export default function Letter3D({text, isAnimated , }) {
   const letterRef = useRef();
   const { camera , gl  } = useThree();
   const [position, setPosition] = useState(deviceSwitch(typeof window !== "undefined" ? window.innerWidth : 1024));
@@ -47,7 +47,7 @@ export default function letter3D({text}) {
   }, [camera]);
 
   useFrame(() => {
-    if (letterRef.current) {
+    if (letterRef.current && isAnimated) {
       letterRef.current.rotation.y += angle;
       letterRef.current.geometry.center();  
 
